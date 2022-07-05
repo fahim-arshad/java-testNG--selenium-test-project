@@ -1,0 +1,39 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class facebookTimeline {
+
+	WebDriver driver = null;
+
+	//ALL Locators
+	By status_text_field = By.className("a8c37x1j ni8dbmo4 stjgntxs l9j0dhe7");
+	By status_text_box = By.className("i1ao9s8h hcukyx3x oygrvhab cxmmr5t8 kvgmc6g5");
+	By post_status_button = By.xpath("//*[@id=\"mount_0_0_NI\"]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div/div/div[3]/div[2]/div/div");
+
+	//constructor
+	public facebookTimeline (WebDriver driver) {
+		this.driver = driver;
+	}
+
+	//Set Functions
+	public void click_status_text_field () {
+		driver.findElement(status_text_field).click();
+	}
+	
+	public void enter_in_status_text_box (String value) {
+		driver.findElement(status_text_box);
+	}
+	
+	public void click_post_status_button () {
+		driver.findElement(post_status_button).click();
+	}
+	
+	public void post_status(String status) {
+		this.click_status_text_field();
+		this.enter_in_status_text_box(status);
+		this.click_post_status_button();
+	}
+	
+}

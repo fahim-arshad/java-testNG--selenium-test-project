@@ -1,0 +1,16 @@
+package pages;
+
+import org.openqa.selenium.WebDriver;
+
+public class wallethubLoginPage {
+
+	WebDriver driver = null;
+
+	//ALL Locators
+
+
+	//constructor
+	public wallethubLoginPage (WebDriver driver) {
+		this.driver = driver;
+	}
+}

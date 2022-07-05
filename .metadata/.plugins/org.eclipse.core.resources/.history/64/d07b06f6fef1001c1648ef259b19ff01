@@ -1,0 +1,22 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class wallethubLoginPage {
+
+	WebDriver driver = null;
+
+	//ALL Locators
+	By username_field = By.name("");
+
+	//constructor
+	public wallethubLoginPage (WebDriver driver) {
+		this.driver = driver;
+	}
+
+	//Set Functions
+	public void enter_in_username_field (String value) {
+		driver.findElement(username_field).sendKeys(value);
+	}
+}

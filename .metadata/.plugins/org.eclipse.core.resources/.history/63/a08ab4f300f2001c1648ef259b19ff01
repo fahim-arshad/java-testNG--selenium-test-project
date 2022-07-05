@@ -1,0 +1,30 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class wallethubLoginPage {
+
+	WebDriver driver = null;
+
+	//ALL Locators
+	By email_field = By.id("email");
+	By password_field = By.id("password");
+	By login_button = By.xpath("//body/main[1]/div[1]/form[1]/div[4]/button[2]");
+
+	//constructor
+	public wallethubLoginPage (WebDriver driver) {
+		this.driver = driver;
+	}
+
+	//Set Functions
+	public void enter_in_username_field (String value) {
+		driver.findElement(email_field).sendKeys(value);
+	}
+	
+	
+	//Test Functions
+	public void sign_in_to_wallethub (String email, String password) {
+		
+	}
+}

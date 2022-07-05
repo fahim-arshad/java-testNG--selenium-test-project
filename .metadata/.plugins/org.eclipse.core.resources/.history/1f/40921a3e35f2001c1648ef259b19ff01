@@ -1,0 +1,14 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class walletHubMyProfilePage {
+
+	WebDriver driver = null;
+
+	//Locators
+	By rating_box = By.xpath("");
+	
+	
+}

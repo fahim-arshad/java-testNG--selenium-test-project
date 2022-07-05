@@ -1,0 +1,45 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class facebookTimeline {
+
+	WebDriver driver = null;
+
+	//ALL Locators
+//	@FindBy(xpath = "//span[contains(text(),\"What's on your mind, Hamza?\")]")
+//    WebElement status;
+//	
+//	@FindBy (xpath = "//button[contains(.,'Post')]")
+//    WebElement post_button;
+	
+	By status_text_field = By.xpath("//span[contains(text(),\"What's on your mind, Hamza?\")]");
+	By status_text_box = By.xpath("//span[contains(text(),\"What's on your mind, Hamza?\")]");
+	By post_status_button = By.xpath("//*[@id=\"mount_0_0_NI\"]/div/div[1]/div/div[4]/div/div/div[1]/div/div[2]/div/div/div/form/div/div[1]/div/div/div/div[3]/div[2]/div/div");
+
+	//constructor
+	public facebookTimeline (WebDriver driver) {
+		this.driver = driver;
+	}
+
+	//Set Functions
+	public void click_status_text_field () {
+		driver.findElement(status_text_field).click();
+	}
+	
+	public void enter_in_status_text_box (String value) {
+		driver.findElement(status_text_field).sendKeys(value);
+	}
+	
+	public void click_post_status_button () {
+		driver.findElement(post_status_button).click();
+	}
+	
+	public void post_status(String status) {
+		this.click_status_text_field();
+		this.enter_in_status_text_box(status);
+		this.click_post_status_button();
+	}
+	
+}

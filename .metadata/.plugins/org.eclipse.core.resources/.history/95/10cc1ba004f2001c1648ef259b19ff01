@@ -1,0 +1,28 @@
+package pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class wallethubProfilePage {
+
+	WebDriver driver = null;
+
+	//Locators
+	By rating_box = By.className("rating-box-wrapper");
+
+	//constructor
+	public wallethubProfilePage (WebDriver driver) {
+		this.driver = driver;
+	}
+
+	//Set Functions
+	public void hover_over_rating () {
+		driver.findElement(rating_box);
+	}
+	
+	//Test Functions
+	public void post_review (String review) {
+		
+	}
+
+}

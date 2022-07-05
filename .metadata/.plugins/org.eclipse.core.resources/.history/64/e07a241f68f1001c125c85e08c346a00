@@ -1,0 +1,18 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import pages.facebookSignInPage;
+
+public class postSatusOnFacebook {
+	
+	private static WebDriver driver = null;
+
+	public static void main(String[] args) {
+		facebookLogin();
+	}
+
+	public static void facebookLogin () {
+		driver = new ChromeDriver();
+	}
+}

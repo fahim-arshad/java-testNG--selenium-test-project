@@ -1,0 +1,32 @@
+package tests;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.facebookSignInPage;
+
+public class postSatusOnFacebook {
+	
+	
+	private static WebDriver driver = null;
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		facebookLogin();
+	}
+
+	public static void facebookLogin () {
+		
+		String username = "03224013059";
+		String password = "hamza1122";
+		
+		driver = new ChromeDriver();
+		
+		facebookSignInPage SignInPageObj = new facebookSignInPage(driver);
+		
+		driver.get("https://www.facebook.com/login/");
+		
+		SignInPageObj.sign_in_to_facebook(username, password);
+	}
+}

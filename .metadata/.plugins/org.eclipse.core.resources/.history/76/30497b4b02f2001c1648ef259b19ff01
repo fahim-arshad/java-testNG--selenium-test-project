@@ -1,0 +1,56 @@
+package tests;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.wallethubLoginPage;
+import pages.wallethubProfilePage;
+
+public class postReviewOnWallethub {
+	
+private static WebDriver driver = null;
+	
+	@BeforeTest
+	public void setUpTest () {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+		String username = "fahim.arshad54@gmail.com";
+		String password = "P@$$w0rd";
+		
+		wallethubLoginPage WallethubLoginPageObj = new wallethubLoginPage(driver);
+		
+		driver.get("https://wallethub.com/login");
+		
+		WallethubLoginPageObj.sign_in_to_wallethub(username, password);
+	}
+	
+	@Test
+	public static void postReview () {
+		
+		String review = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+		
+		driver.get("https://wallethub.com/profile/13732055i");
+		
+		wallethubProfilePage WalletHubProfilePageObj = new wallethubProfilePage(driver);
+		
+		//WalletHubProfilePageObj.post_review(review);
+	}
+	
+	@AfterTest
+	public void tearDownTest () {
+		
+		driver.close();
+		driver.quit();
+		System.out.println("Test Completed Successfully!");
+	}
+
+}
